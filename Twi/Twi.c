@@ -71,7 +71,6 @@ u8   M_Twi_ReadByte(u8 Local_u8_State)
 	{
 		TWCR=(1<<2)|(1<<7);	/* Enable TWI and clear interrupt flag */
 		while(!(TWCR&(1<<7)));	/* Wait until TWI finish its current job */
-		return TWDR;		/* Return received data */
 	}
 	return TWDR;
 }
